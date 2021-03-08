@@ -27,13 +27,15 @@ deploy() {
     sudo kubectl delete web-app.yaml --namespace=default
     sudo kubectl apply -f web-app.yaml
 }
-
+DEPLOYMENT=web-app.yaml
 # Orchestrate
 echo "📋   Building your application..."
 if [ "${args[0]}" = "git" ] && [ "${args[1]}" = "commit" ] && [ "${args[2]}" = "-m" ]; then
-    docker build -t chinmayicr27/web-app:latest .
+    sudo docker build -t chinmayicr27/web-app:latest .
     deploy
-    cat "sudo kubectl logs deployment.yaml"
+    for p in $(sudo kubectl get pods | grep ^${DEPLOYMENT}- | cut -f 1 -d ' '); do 
+        sudo kubectl logs $p 1>/home/ubuntu-master-node/podlogs.txt
+    done
 else
     if [ "${args[1]}" = "--help" ]; then
         echo "github commit -m "your_message" " - to commit changes to your github repository with commit message
