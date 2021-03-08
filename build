@@ -1,0 +1,46 @@
+#! /bin/bash
+args=("$@")
+# Timestamp Function
+timestamp() {
+    date +"%T"
+}
+
+# Temporary file for stderr redirects
+tmpfile=$(mktemp)
+
+# Go build
+build() {
+    echo "⏲️   $(timestamp): started build script..."
+    echo "🏗️   $(timestamp): building cd-cd-pipeline..."
+    go build 2>tmpfile
+    if [ -s tmpfile ]; then
+        cat tmpfile
+        echo "❌   $(timestamp): compilation error, exiting"
+        rm tmpfile
+        exit 0
+    fi
+}
+
+# Deploy to Kubernetes cluster using kubectl
+deploy() {
+    echo "☸️   $(timestamp): deploying to the k8 cluster"
+    sudo kubectl delete deployment.yaml --namespace=default
+    sudo kubectl apply -f deployment.yaml
+}
+
+# Orchestrate
+echo "📋   Building your application..."
+if [ "${args[1]}" = "git" ] && [ "${args[2]}" = "commit" ] && [ "${args[3]}" = "-m" ]; then
+    docker build -t chinmayicr27/web-app:gwapp .
+    deploy
+    cat "sudo kubectl logs deployment.yaml"
+else
+    if [ "${args[1]}" = "--help" ]; then
+        echo "github commit -m "your_message" " - to commit changes to your github repository with commit message
+        echo "github commit" - to commit changes to your github repository without any commit message
+    else
+        echo "🤔  $(timestamp): no valid arguments passed, type --help for a valid list of arguments"
+    fi
+fi
+echo "✔️   $(timestamp): completed deployment."
+echo "👋   $(timestamp): exiting..."
