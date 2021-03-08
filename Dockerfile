@@ -1,8 +1,6 @@
 FROM golang:1.12.0-alpine3.9
 LABEL maintainer="Chinmayi C. R."\
-    version="1.0"
-RUN apt update -y \
-    && apt upgrade -y
+    version="1.2"
 RUN mkdir /app
 ADD . /app
 WORKDIR /app
