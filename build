@@ -30,6 +30,9 @@ myLabel=web-deployment
 # Orchestrate
 echo "📋   Building your application..."
 if [ "${args[0]}" = "git" ] && [ "${args[1]}" = "commit" ] && [ "${args[2]}" = "-m" ]; then
+    git add .
+    git commit -m "${args[3]}"
+    git push -f origin master
     sudo docker build -t chinmayicr27/web-app:latest .
     deploy
     sudo kubectl describe pods web-deployment-57c949d849-22jv6 1>>/home/ubuntu-master-node/ci_cd_pipeline/podlogs.txt    
