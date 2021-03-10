@@ -35,6 +35,7 @@ if [ "${args[0]}" = "git" ] && [ "${args[1]}" = "commit" ] && [ "${args[2]}" = "
     git push -f origin master
     sudo docker build -t chinmayicr27/web-app:latest .
     deploy
+    echo "" >/home/ubuntu-master-node/ci_cd_pipeline/podlogs.txt
     sudo kubectl describe pods web-deployment-57c949d849-22jv6 1>>/home/ubuntu-master-node/ci_cd_pipeline/podlogs.txt    
     sudo kubectl describe pods web-deployment-57c949d849-bsm66 1>>/home/ubuntu-master-node/ci_cd_pipeline/podlogs.txt 
     sudo kubectl describe pods web-deployment-57c949d849-nkdgv 1>>/home/ubuntu-master-node/ci_cd_pipeline/podlogs.txt  
