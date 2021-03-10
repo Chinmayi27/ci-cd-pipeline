@@ -24,18 +24,22 @@ build() {
 # Deploy to Kubernetes cluster using kubectl
 deploy() {
     echo "☸️   $(timestamp): deploying to the k8 cluster"
-    sudo kubectl delete web-app.yaml --namespace=default
     sudo kubectl apply -f web-app.yaml
 }
-DEPLOYMENT=web-app.yaml
+myLabel=web-deployment
 # Orchestrate
 echo "📋   Building your application..."
 if [ "${args[0]}" = "git" ] && [ "${args[1]}" = "commit" ] && [ "${args[2]}" = "-m" ]; then
     sudo docker build -t chinmayicr27/web-app:latest .
     deploy
-    for p in $(sudo kubectl get pods | grep ^${DEPLOYMENT}- | cut -f 1 -d ' '); do 
-        sudo kubectl logs $p 1>/home/ubuntu-master-node/podlogs.txt
-    done
+    sudo kubectl describe pods web-deployment-57c949d849-22jv6 1>>/home/ubuntu-master-node/ci_cd_pipeline/podlogs.txt    
+    sudo kubectl describe pods web-deployment-57c949d849-bsm66 1>>/home/ubuntu-master-node/ci_cd_pipeline/podlogs.txt 
+    sudo kubectl describe pods web-deployment-57c949d849-nkdgv 1>>/home/ubuntu-master-node/ci_cd_pipeline/podlogs.txt  
+    sudo kubectl describe pods web-deployment-57c949d849-q77cn 1>>/home/ubuntu-master-node/ci_cd_pipeline/podlogs.txt  
+    sudo kubectl describe pods web-deployment-57c949d849-vjqx8 1>>/home/ubuntu-master-node/ci_cd_pipeline/podlogs.txt
+    sudo kubectl get nodes 1>/home/ubuntu-master-node/ci_cd_pipeline/nodes.txt
+    sudo kubectl get pods 1>/home/ubuntu-master-node/ci_cd_pipeline/pods.txt
+    sudo kubectl get deployments 1>/home/ubuntu-master-node/ci_cd_pipeline/deployments.txt
 else
     if [ "${args[1]}" = "--help" ]; then
         echo "github commit -m "your_message" " - to commit changes to your github repository with commit message

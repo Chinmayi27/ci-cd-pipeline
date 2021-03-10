@@ -1,0 +1,4 @@
+NAME     STATUS   ROLES                  AGE   VERSION
+master   Ready    control-plane,master   13d   v1.20.4
+node1    Ready    <none>                 13d   v1.20.4
+node2    Ready    <none>                 13d   v1.20.4

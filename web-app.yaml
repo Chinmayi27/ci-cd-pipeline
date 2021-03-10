@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: web-app
+  name: web-deployment
 spec:
   replicas: 5
   selector:
@@ -23,7 +23,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: go-web-service
+  name: web-service
 spec:
   type: LoadBalancer
   ports:
