@@ -479,3 +479,263 @@ Events:
   Type     Reason        Age               From             Message
   ----     ------        ----              ----             -------
   Warning  NodeNotReady  3m (x2 over 16h)  node-controller  Node is not ready
+Name:         web-deployment-57c949d849-22jv6
+Namespace:    default
+Priority:     0
+Node:         node1/192.168.20.133
+Start Time:   Wed, 10 Mar 2021 03:53:16 -0800
+Labels:       name=web-app
+              pod-template-hash=57c949d849
+Annotations:  cni.projectcalico.org/podIP: 172.16.166.172/32
+              cni.projectcalico.org/podIPs: 172.16.166.172/32
+Status:       Running
+IP:           172.16.166.172
+IPs:
+  IP:           172.16.166.172
+Controlled By:  ReplicaSet/web-deployment-57c949d849
+Containers:
+  application:
+    Container ID:   docker://139fad42c4caa35e9dc35ccb485cf0a6946d4e814d693cbe9c894b84cb6b6179
+    Image:          chinmayicr27/web-app:latest
+    Image ID:       docker-pullable://chinmayicr27/web-app@sha256:789b6d859173a48aa230cf03f73cc6c484cf86cb6860a233b4aa74e270b639ff
+    Port:           3000/TCP
+    Host Port:      0/TCP
+    State:          Running
+      Started:      Thu, 11 Mar 2021 10:04:35 -0800
+    Last State:     Terminated
+      Reason:       Error
+      Exit Code:    2
+      Started:      Wed, 10 Mar 2021 03:53:27 -0800
+      Finished:     Thu, 11 Mar 2021 10:03:24 -0800
+    Ready:          True
+    Restart Count:  1
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-jvcdx (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  default-token-jvcdx:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  default-token-jvcdx
+    Optional:    false
+QoS Class:       BestEffort
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                 node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type     Reason        Age                From             Message
+  ----     ------        ----               ----             -------
+  Warning  NodeNotReady  47m (x2 over 17h)  node-controller  Node is not ready
+Name:         web-deployment-57c949d849-bsm66
+Namespace:    default
+Priority:     0
+Node:         node1/192.168.20.133
+Start Time:   Wed, 10 Mar 2021 03:53:16 -0800
+Labels:       name=web-app
+              pod-template-hash=57c949d849
+Annotations:  cni.projectcalico.org/podIP: 172.16.166.176/32
+              cni.projectcalico.org/podIPs: 172.16.166.176/32
+Status:       Running
+IP:           172.16.166.176
+IPs:
+  IP:           172.16.166.176
+Controlled By:  ReplicaSet/web-deployment-57c949d849
+Containers:
+  application:
+    Container ID:   docker://c2449a9baa4d517db5722b84707361cadcb17519c7a22013b6df70619f0928ca
+    Image:          chinmayicr27/web-app:latest
+    Image ID:       docker-pullable://chinmayicr27/web-app@sha256:789b6d859173a48aa230cf03f73cc6c484cf86cb6860a233b4aa74e270b639ff
+    Port:           3000/TCP
+    Host Port:      0/TCP
+    State:          Running
+      Started:      Thu, 11 Mar 2021 10:04:36 -0800
+    Last State:     Terminated
+      Reason:       Error
+      Exit Code:    2
+      Started:      Wed, 10 Mar 2021 03:53:27 -0800
+      Finished:     Thu, 11 Mar 2021 10:03:24 -0800
+    Ready:          True
+    Restart Count:  1
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-jvcdx (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  default-token-jvcdx:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  default-token-jvcdx
+    Optional:    false
+QoS Class:       BestEffort
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                 node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type     Reason        Age                From             Message
+  ----     ------        ----               ----             -------
+  Warning  NodeNotReady  47m (x2 over 17h)  node-controller  Node is not ready
+Name:         web-deployment-57c949d849-nkdgv
+Namespace:    default
+Priority:     0
+Node:         node1/192.168.20.133
+Start Time:   Wed, 10 Mar 2021 03:53:16 -0800
+Labels:       name=web-app
+              pod-template-hash=57c949d849
+Annotations:  cni.projectcalico.org/podIP: 172.16.166.175/32
+              cni.projectcalico.org/podIPs: 172.16.166.175/32
+Status:       Running
+IP:           172.16.166.175
+IPs:
+  IP:           172.16.166.175
+Controlled By:  ReplicaSet/web-deployment-57c949d849
+Containers:
+  application:
+    Container ID:   docker://3a35fa5342b25960145384ec198f08eceaed66525362a9547b2f1a8d3c8d31fa
+    Image:          chinmayicr27/web-app:latest
+    Image ID:       docker-pullable://chinmayicr27/web-app@sha256:789b6d859173a48aa230cf03f73cc6c484cf86cb6860a233b4aa74e270b639ff
+    Port:           3000/TCP
+    Host Port:      0/TCP
+    State:          Running
+      Started:      Thu, 11 Mar 2021 10:04:36 -0800
+    Last State:     Terminated
+      Reason:       Error
+      Exit Code:    2
+      Started:      Wed, 10 Mar 2021 03:53:27 -0800
+      Finished:     Thu, 11 Mar 2021 10:03:24 -0800
+    Ready:          True
+    Restart Count:  1
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-jvcdx (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  default-token-jvcdx:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  default-token-jvcdx
+    Optional:    false
+QoS Class:       BestEffort
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                 node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type     Reason        Age                From             Message
+  ----     ------        ----               ----             -------
+  Warning  NodeNotReady  47m (x2 over 17h)  node-controller  Node is not ready
+Name:         web-deployment-57c949d849-q77cn
+Namespace:    default
+Priority:     0
+Node:         node1/192.168.20.133
+Start Time:   Wed, 10 Mar 2021 03:53:16 -0800
+Labels:       name=web-app
+              pod-template-hash=57c949d849
+Annotations:  cni.projectcalico.org/podIP: 172.16.166.177/32
+              cni.projectcalico.org/podIPs: 172.16.166.177/32
+Status:       Running
+IP:           172.16.166.177
+IPs:
+  IP:           172.16.166.177
+Controlled By:  ReplicaSet/web-deployment-57c949d849
+Containers:
+  application:
+    Container ID:   docker://6451ea304c37caedfd7381eed3308d845a8b5cce0cf04e068277fa9d8905f2ad
+    Image:          chinmayicr27/web-app:latest
+    Image ID:       docker-pullable://chinmayicr27/web-app@sha256:789b6d859173a48aa230cf03f73cc6c484cf86cb6860a233b4aa74e270b639ff
+    Port:           3000/TCP
+    Host Port:      0/TCP
+    State:          Running
+      Started:      Thu, 11 Mar 2021 10:04:36 -0800
+    Last State:     Terminated
+      Reason:       Error
+      Exit Code:    2
+      Started:      Wed, 10 Mar 2021 03:53:27 -0800
+      Finished:     Thu, 11 Mar 2021 10:03:24 -0800
+    Ready:          True
+    Restart Count:  1
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-jvcdx (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  default-token-jvcdx:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  default-token-jvcdx
+    Optional:    false
+QoS Class:       BestEffort
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                 node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type     Reason        Age                From             Message
+  ----     ------        ----               ----             -------
+  Warning  NodeNotReady  47m (x2 over 17h)  node-controller  Node is not ready
+Name:         web-deployment-57c949d849-vjqx8
+Namespace:    default
+Priority:     0
+Node:         node1/192.168.20.133
+Start Time:   Wed, 10 Mar 2021 03:53:16 -0800
+Labels:       name=web-app
+              pod-template-hash=57c949d849
+Annotations:  cni.projectcalico.org/podIP: 172.16.166.174/32
+              cni.projectcalico.org/podIPs: 172.16.166.174/32
+Status:       Running
+IP:           172.16.166.174
+IPs:
+  IP:           172.16.166.174
+Controlled By:  ReplicaSet/web-deployment-57c949d849
+Containers:
+  application:
+    Container ID:   docker://78535c7b1df1b048a0019bf2ce5adafe39a2c3c3c4061797f4b8ec51fdcecbaf
+    Image:          chinmayicr27/web-app:latest
+    Image ID:       docker-pullable://chinmayicr27/web-app@sha256:789b6d859173a48aa230cf03f73cc6c484cf86cb6860a233b4aa74e270b639ff
+    Port:           3000/TCP
+    Host Port:      0/TCP
+    State:          Running
+      Started:      Thu, 11 Mar 2021 10:04:35 -0800
+    Last State:     Terminated
+      Reason:       Error
+      Exit Code:    2
+      Started:      Wed, 10 Mar 2021 03:53:27 -0800
+      Finished:     Thu, 11 Mar 2021 10:03:24 -0800
+    Ready:          True
+    Restart Count:  1
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-jvcdx (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  default-token-jvcdx:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  default-token-jvcdx
+    Optional:    false
+QoS Class:       BestEffort
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                 node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type     Reason        Age                From             Message
+  ----     ------        ----               ----             -------
+  Warning  NodeNotReady  47m (x2 over 17h)  node-controller  Node is not ready
