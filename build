@@ -45,7 +45,7 @@ if [ "${args[0]}" = "git" ] && [ "${args[1]}" = "commit" ] && [ "${args[2]}" = "
     sudo kubectl get pods 1>/home/ubuntu-master-node/ci_cd_pipeline/web-page/pods/pods.txt
     sudo kubectl get deployments 1>/home/ubuntu-master-node/ci_cd_pipeline/web-page/pods/deployments.txt
 else
-    if [ "${args[1]}" = "--help" ]; then
+    if [ "${args[0]}" = "--help" ]; then
         echo "github commit -m "your_message" " - to commit changes to your github repository with commit message
         echo "github commit" - to commit changes to your github repository without any commit message
     else
