@@ -4,6 +4,7 @@ go-web-app-6c77fcc84f-jcrrl       0/1     ImagePullBackOff   0          5d22h
 go-web-app-6c77fcc84f-mnprq       0/1     ImagePullBackOff   0          5d22h
 go-web-app-6c77fcc84f-r8grs       0/1     ImagePullBackOff   0          5d22h
 go-web-app-6c77fcc84f-vpvk8       0/1     ImagePullBackOff   0          5d22h
+nginx-web-5bf45d88df-cbx4l        0/1     Pending            0          42s
 web-deployment-57c949d849-22jv6   1/1     Running            1          2d
 web-deployment-57c949d849-bsm66   1/1     Running            1          2d
 web-deployment-57c949d849-nkdgv   1/1     Running            1          2d
