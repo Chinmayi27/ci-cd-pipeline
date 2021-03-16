@@ -8,6 +8,7 @@ This Project was done under the Crypt Special Interest Group of ISTE-NITK.
 This Project was done using Go language, Dockerfile and Unix Shell Scripting.
 
 ---
+![CI/CD Pipeline Flow](https://github.com/Chinmayi27/ci-cd-pipeline/blob/master/images/cicd-pipeline-flow.png)
 #### Methodology
 
 This Project requires a cluster up and running with a master node and any number of worker nodes.
@@ -28,7 +29,7 @@ kubeadm init
 ```
 On the worker nodes, use the join command displayed on master node:
  
-<image>
+![join command](https://github.com/Chinmayi27/ci-cd-pipeline/blob/master/images/join-ss.PNG)
 
 #### Integration and Deployment of the application
 
