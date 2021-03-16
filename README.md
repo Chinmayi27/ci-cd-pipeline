@@ -31,7 +31,7 @@ On the worker nodes, use the join command displayed on master node:
  
 ![join command](https://github.com/Chinmayi27/ci-cd-pipeline/blob/master/images/join-ss.PNG)
 
-_ Note: This token is different for every cluster. The above image shows just an example.
+*Note: This token is different for every cluster. The above image shows just an example.*
 
 #### Integration and Deployment of the application
 
