@@ -1,10 +1,12 @@
 CI/CD Pipeline for a simple go application
 ===
-A DevOps project on building a CI/CD pipeline for automation of a simple go application. This go application renders an html page.
----
+
+##A DevOps project on building a CI/CD pipeline for automation of a simple go application. This go application renders an html page.
+
 This Project was done under the Crypt Special Interest Group of ISTE-NITK.
 
 This Project was done using Go language, Dockerfile and Unix Shell Scripting.
+
 ---
 **Methodology**
 
