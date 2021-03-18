@@ -28,29 +28,36 @@ deploy() {
 }
 myLabel=web-deployment
 # Orchestrate
-echo "📋   Building your application..."
 if [ "${args[0]}" = "git" ] && [ "${args[1]}" = "commit" ] && [ "${args[2]}" = "-m" ]; then
-    git add .
-    git commit -m "${args[3]}"
-    git push -f origin master
-    sudo docker build -t chinmayicr27/web-app:latest .
-    deploy
-    echo "" >/home/ubuntu-master-node/ci_cd_pipeline/podlogs.txt
-    sudo kubectl describe pods web-deployment-57c949d849-22jv6 1>>/home/ubuntu-master-node/ci_cd_pipeline/web-page/pods/podlogs.txt    
-    sudo kubectl describe pods web-deployment-57c949d849-bsm66 1>>/home/ubuntu-master-node/ci_cd_pipeline/web-page/pods/podlogs.txt 
-    sudo kubectl describe pods web-deployment-57c949d849-nkdgv 1>>/home/ubuntu-master-node/ci_cd_pipeline/web-page/pods/podlogs.txt  
-    sudo kubectl describe pods web-deployment-57c949d849-q77cn 1>>/home/ubuntu-master-node/ci_cd_pipeline/web-page/pods/podlogs.txt  
-    sudo kubectl describe pods web-deployment-57c949d849-vjqx8 1>>/home/ubuntu-master-node/ci_cd_pipeline/web-page/pods/podlogs.txt
-    sudo kubectl get nodes 1>/home/ubuntu-master-node/ci_cd_pipeline/web-page/pods/nodes.txt
-    sudo kubectl get pods 1>/home/ubuntu-master-node/ci_cd_pipeline/web-page/pods/pods.txt
-    sudo kubectl get deployments 1>/home/ubuntu-master-node/ci_cd_pipeline/web-page/pods/deployments.txt
+    echo "📋   Building your application..."
+    if [ "${args[3]}" = "" ]; then
+        echo git commit cannot be done with an empty message
+    else    
+        git add .
+        git commit -m "${args[3]}"
+        git push -f origin master
+        sudo docker build -t chinmayicr27/web-app:latest .
+        build
+        deploy
+        echo "" >/home/ubuntu-master-node/ci_cd_pipeline/podlogs.txt
+        sudo kubectl describe pods web-deployment-57c949d849-22jv6 1>>/home/ubuntu-master-node/ci_cd_pipeline/web-page/pods/podlogs.txt    
+        sudo kubectl describe pods web-deployment-57c949d849-bsm66 1>>/home/ubuntu-master-node/ci_cd_pipeline/web-page/pods/podlogs.txt 
+        sudo kubectl describe pods web-deployment-57c949d849-nkdgv 1>>/home/ubuntu-master-node/ci_cd_pipeline/web-page/pods/podlogs.txt  
+        sudo kubectl describe pods web-deployment-57c949d849-q77cn 1>>/home/ubuntu-master-node/ci_cd_pipeline/web-page/pods/podlogs.txt  
+        sudo kubectl describe pods web-deployment-57c949d849-vjqx8 1>>/home/ubuntu-master-node/ci_cd_pipeline/web-page/pods/podlogs.txt
+        sudo kubectl get nodes 1>/home/ubuntu-master-node/ci_cd_pipeline/web-page/pods/nodes.txt
+        sudo kubectl get pods 1>/home/ubuntu-master-node/ci_cd_pipeline/web-page/pods/pods.txt
+        sudo kubectl get deployments 1>/home/ubuntu-master-node/ci_cd_pipeline/web-page/pods/deployments.txt
+        echo "✔️   $(timestamp): completed deployment."
+        echo "👋   $(timestamp): exiting..."
+    fi
 else
     if [ "${args[0]}" = "--help" ]; then
-        echo "github commit -m "your_message" " - to commit changes to your github repository with commit message
-        echo "github commit" - to commit changes to your github repository without any commit message
+        echo Help
+        echo usage: git commit [flag] [arg]
+        echo Options and arguments: 
+        echo "git commit -m "your_message" " - to commit changes to your github repository with commit message
     else
         echo "🤔  $(timestamp): no valid arguments passed, type --help for a valid list of arguments"
     fi
 fi
-echo "✔️   $(timestamp): completed deployment."
-echo "👋   $(timestamp): exiting..."
